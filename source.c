@@ -12,7 +12,7 @@ typedef struct{
     double price;
 }Book;
 
-const char *RetriveStringFromFile(FILE *filestream,char separator){
+const char *RetrieveStringFromFile(FILE *filestream,char separator){
     char *string;
     string = malloc(STRING_LEN);
     char character = 0;
@@ -48,12 +48,12 @@ int main(int argc,char **argv){
         printf("Error while opening the file\n");
         exit(EXIT_FAILURE);
     }
-    while(!feof(originData)){
+    while(!feof(originData) && libraryIndex<LIBRARY_LEN){
         library[libraryIndex] = malloc(sizeof(Book));
-        strcpy(library[libraryIndex]->title, RetriveStringFromFile(originData,','));
-        strcpy(library[libraryIndex]->author, RetriveStringFromFile(originData,','));
-        library[libraryIndex]->year = atoi(RetriveStringFromFile(originData,','));
-        library[libraryIndex]->price = atof(RetriveStringFromFile(originData,','));
+        strcpy(library[libraryIndex]->title, RetrieveStringFromFile(originData,','));
+        strcpy(library[libraryIndex]->author, RetrieveStringFromFile(originData,','));
+        library[libraryIndex]->year = atoi(RetrieveStringFromFile(originData,','));
+        library[libraryIndex]->price = atof(RetrieveStringFromFile(originData,','));
         libraryIndex++;
     }
     fclose(originData);

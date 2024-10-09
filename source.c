@@ -144,6 +144,10 @@ int main(int argc,char **argv){
                     PrintOptions(genres,genreIndex);
                     printf("Your choice: ");
                     scanf("%d",&genreChoice);
+                    if(genreChoice<1 || genreChoice>genreIndex){
+                        printf("Invalid choice\n");
+                        break;
+                    }
                     printf("Here are all of the books currently in the library with that genre: \n");
                     PrintBooksGenre(library,libraryIndex,genres[genreChoice-1]);
                     break;

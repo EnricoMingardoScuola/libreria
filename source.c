@@ -2,9 +2,9 @@
 #include<string.h>
 #include<stdlib.h>
 
-#define STRING_LEN 50
-#define LIBRARY_LEN 50
-#define GENRE_LEN 30
+#define STRING_LEN 100
+#define LIBRARY_LEN 500
+#define GENRE_LEN 100
 #define OPTIONS_LEN 3
 
 typedef struct{
